@@ -4,7 +4,7 @@ import time
 from tkinter import END
 from xmlrpc.client import boolean
 
-#Must Access this to continue.     
+#Must Access this to continue.      
 def main():
         UserName = ""
         str(UserName)
@@ -14,10 +14,10 @@ def main():
 
         LoginTimes = 0
         int(LoginTimes)
-        
+  
         print("Enter CANCEL if you want to stop the process!")
         UserName = input("Enter Username: ")
-        
+  
         if UserName == "CANCEL" or PassWord == "CANCEL":
               while True:
                 print("The process has been cancelled")
@@ -25,7 +25,6 @@ def main():
                 print("Outcome 1")
                 exit()
         PassWord = input("Enter Password: ")
-        
         if UserName == "CANCEL" or PassWord == "CANCEL":
               while True:
                 print("1")  
@@ -40,9 +39,8 @@ def main():
             time.sleep(1)
             print ("Welcome to the -----")
             print("Outcome 2")
-            time.sleep(2)         
+            time.sleep(2)        
             #you may contect here to other program
-            
         else:
             print ("Password did not match!")
             LoginTimes = LoginTimes + 1
