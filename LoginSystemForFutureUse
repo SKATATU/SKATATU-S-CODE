@@ -1,0 +1,65 @@
+from ast import If, Or
+import time
+
+from tkinter import END
+from xmlrpc.client import boolean
+
+#Must Access this to continue.
+ 
+
+
+            
+       
+def main():
+        UserName = ""
+        str(UserName)
+
+        PassWord = ""
+        str(PassWord)
+
+        LoginTimes = 0
+        int(LoginTimes)
+        print("Enter CANCEL if you want to stop the process!")
+        UserName = input("Enter Username: ")
+        if UserName == "CANCEL" or PassWord == "CANCEL":
+              while True:
+                print("The process has been cancelled")
+                time.sleep(2)
+                print("Outcome 1")
+                exit()
+        PassWord = input("Enter Password: ")
+        if UserName == "CANCEL" or PassWord == "CANCEL":
+              while True:
+                print("1")  
+                print("The process has been cancelled")
+                time.sleep(2)
+                print("Outcome 1")
+                exit()
+      
+        if UserName == "Example"and PassWord == "Example":
+            time.sleep(1)
+            print ("Login successful!")
+            time.sleep(1)
+            print ("Welcome to the -----")
+            print("Outcome 2")
+            exit()          
+            #you may contect here to other program
+        else:
+            print ("Password did not match!")
+            LoginTimes = LoginTimes + 1
+            print("Outcome 3")
+            print(LoginTimes)
+            if LoginTimes >= 5:
+                print("The program exit automatically because of the 5 times login unsuccessful.")
+                exit()
+            elif LoginTimes < 5:
+                 main()
+
+main()
+
+"""valuable used:
+    A 
+    LoginTimes
+    UserName
+    Password
+    """
