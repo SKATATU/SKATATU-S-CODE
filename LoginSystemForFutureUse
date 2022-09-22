@@ -24,7 +24,9 @@ def main():
                 time.sleep(2)
                 print("Outcome 1")
                 exit()
+                
         PassWord = input("Enter Password: ")
+        
         if UserName == "CANCEL" or PassWord == "CANCEL":
               while True:
                 print("1")  
