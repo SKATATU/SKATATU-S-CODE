@@ -1,10 +1,11 @@
 import time
-#Must Access this to continue.      
+      
 UserName = ""
 PassWord = ""
 LoginTimes = 0
 Process = 0
 
+#Must Access this to continue.
 while LoginTimes <= 5:
   if Process == 0: 
     print("Enter CANCEL if you want to stop the process!\n")
