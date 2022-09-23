@@ -1,41 +1,52 @@
-from ast import If, Or
-import os
 import time
+#Must Access this to continue.      
+UserName = ""
+PassWord = ""
+LoginTimes = 0
+Process = 0
 
-from tkinter import END
-from xmlrpc.client import boolean
+while LoginTimes <= 5:
+  if Process == 0: 
+    print("Enter CANCEL if you want to stop the process!\n")
+    UserName = input("Enter Username: ")
+  else:
+    print("Enter CANCEL if you want to stop the process!")
+    PassWord = input("Enter Password: ")
+    print(PassWord)
+  if UserName == "CANCEL" or PassWord == "CANCEL":
+    print("The process has been cancelled")
+    time.sleep(2)
+    LoginTimes += 1
+    Process -= 1
+    UserName = ""
+    PassWord = ""
+  elif UserName == "Example" and Process == 0:
+    Process += 1
+  elif PassWord == "Example" and Process >= 1:
+    time.sleep(1)  
+    print ("Login successful!")
+    time.sleep(1)
+    print ("Welcome to the -----")
+    time.sleep(2)    
+    Process = 0
+  else:
+    print ("Password or Username did not match!")
+    LoginTimes += 1
+    
+if LoginTimes >= 5:
+        print("The program exit automatically because of the  times login unsuccessful. \n #Security reason")
 
-#Must Access this to continue.
-def main():
-    while True:
-        UserName = ""
-        PassWord = ""
-        A = False
-        def Cancel():
-            if UserName or PassWord == "CANCEL":
-                print("The process has been cancelled")
-                A = True
-                main()
+"""
+valuable used:
+    LoginTimes
+    UserName
+    Password
+    Process
+    """
 
-        print("Enter CANCEL if you want to stop the process!")
-
-        UserName = input ("Enter Username: ")
-        
-        Cancel()
-
-        PassWord = input ("Enter Password: ")
-
-        Cancel()
-
-        if UserName == "Example" and PassWord == "Example":
-            time.sleep(1)
-            print ("Login successful!")
-            time.sleep(1)
-            print ("Welcome to the -----")
-            break
-
-
-        if UserName != "Example" or PassWord != "Example":
-            print ("Password did not match!")
-
-main()
+"""
+created by 
+    1.SKATAU
+    2.Letitia
+    3.Matty
+"""
