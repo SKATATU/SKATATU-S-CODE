@@ -1,0 +1,4 @@
+name = input("What is your name?")
+age = input("how old are you?")
+print(f"very nice to meet you, {name}! You are {age} years old.\
+Welcome to the access planel.") 
