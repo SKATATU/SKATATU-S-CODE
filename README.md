@@ -1,1 +1,1 @@
-# SKATATU'S team CODING
+# SKATATU'S python team CODING
