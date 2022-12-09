@@ -2,9 +2,12 @@ from encodings import utf_8
 import select
 from pathlib import Path
 from tkinter.tix import Select
-import bcrypt
+
 import time
+
+"""good module for the masking (maskpass) and salting (bcrypt) of password"""
 import maskpass
+import bcrypt
 
 from PP import Password_dict, Username_dict
 
