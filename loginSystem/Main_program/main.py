@@ -4,11 +4,13 @@ from pathlib import Path
 from tkinter.tix import Select
 import bcrypt
 import time
+import maskpass
 
 from PP import Password_dict, Username_dict
 
 UserName = ""
 PassWord = ""
+ReEnter_PassWord = ""
 LoginTimes = 0
 Process = 0
 SignupTimes = 0
@@ -49,7 +51,7 @@ def selection():
     print("")
     print("Selection():Finished process! Goodbye!")
     exit()
-  if Select == "CANCEL":
+  if Select == str("CANCEL"):
     exit(selection)
 
 
@@ -65,13 +67,15 @@ while LoginTimes <= 5:
     UserName = input("\nPlease enter your Username:")
     Username_dict.update({"username_set" : UserName })
 
-    PassWord = input("\nPlease enter you Password:")
-    hashed_PassWord = bcrypt.hashpw(PassWord.encode('utf-8'),bcrypt.gensalt())
-    Password_dict.update({"password_set" : hashed_PassWord })
+    PassWord = maskpass.askpass(prompt="Please enter your password:",mask="*")
+    ReEnter_PassWord = maskpass.askpass(prompt="Please reenter your password:",mask="*")
+    if PassWord == ReEnter_PassWord:
+      hashed_PassWord = bcrypt.hashpw(PassWord.encode('utf-8'),bcrypt.gensalt())
+      Password_dict.update({"password_set" : hashed_PassWord })
   else:
     print("\nEnter CANCEL if you want to stop the process!")
     print("Enter SIGNUP if you want to sign up an account!")
-    PassWord = input("\nEnter Password: ")
+    PassWord = maskpass.askpass(prompt="Please enter your password:",mask= "*")
   
   if UserName != " " and Process == 0:
     Process += 1
