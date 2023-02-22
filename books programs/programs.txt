@@ -1,0 +1,84 @@
+#cash program
+global num
+global catCheck
+def showMenu():
+  print("0.Logout")
+  print("1.Cash withdrawal")
+  print("2.Transfer")
+  print("3.Account balance\n")
+  
+def module1():
+  print("How much would you like to withdraw?\n")
+def module2():
+  print("How much would you like to transfer?\n")
+def module3():
+  print("This is your account balance: \n")
+def module0():
+  print("You have been logged out.\n")
+
+catCheck=0  
+showMenu()
+num = int(input("Please enter an interger between 0 to 3.\n"))
+
+while num != 0 and catCheck <=3:
+  if num == 1:
+    module1()
+  elif num == 2:
+    module2()
+  elif num == 3:
+    module3()
+  else:
+    print("Input invalid!\n")
+    catCheck += 1
+  showMenu()
+  num = int(input("Please enter an interger between 0 to 3.\n"))
+if num != 0 and catCheck >=3:
+  print("You've entered 5 times wrongly, process stopped because of security.\n")
+  
+module0()
+
+#prime number program
+num = int(input("Please input a number:"))
+if num > 1:
+  isPrime = True
+else:
+  isPrime = False
+  
+for i in range (2,num//2):
+  if(num%1 == 0):
+    isPrime = False
+    
+if isPrime == True:
+  print(num, "is a prime number.")
+else: 
+  print(num, "is NOT a prime number.")
+
+#LCF program
+num1 = int(input("Input the 1st number:"))
+num2 = int(input("Input the 2nd number:"))
+
+i = 1 
+hcf = i
+
+while i <= num1 and i <= num2:
+  if num1 % i == 0 and num2 % i == 0:
+    hcf = i
+  i+= 1  
+print("The largest common factor of these two numbers are:", hcf)
+
+#list program
+
+
+num=[12,34,56,23,12,4]
+bound = 34
+count = 0
+sum=0
+for i in range (0, len(num)):
+  if num[i] < bound:
+    count += 1 
+    sum += num[i]
+print("The sum of numbers lower than 34 is:", sum, "and the count is:", count)
+
+
+  
+
