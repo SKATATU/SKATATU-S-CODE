@@ -53,7 +53,7 @@ if isPrime == True:
 else: 
   print(num, "is NOT a prime number.")
 
-#LCF program
+#HCF program
 num1 = int(input("Input the 1st number:"))
 num2 = int(input("Input the 2nd number:"))
 
