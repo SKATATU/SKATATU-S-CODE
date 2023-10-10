@@ -75,4 +75,6 @@ while mode == 0 :
   mode = CheckEnd()
   currentTurn = Switchturn(currentTurn)
   ShowMap()
+
+
 ShowResult()
