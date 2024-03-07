@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+  
+<title>Calling an API</title>
+  
+<body>
+  <input type="text" id = "myID" value = "">
+  <button id = "myBtn">enter</button>
+  Name:
+  <p id="01"></p>
+  
+  <script>
+    const id_value = document.getElementById("myID").value
+    const url = "https://2d2b92bb-a11c-42ec-afef-f1360fa9b4b1-00-3qayttsmngj74.janeway.repl.co/getname?id=" + id_value;
+    
+    async function a(){
+      let data = await fetch(url);
+      document.getElementById("01").innerHTML = await data.text();
+    }
+    a();
+    
+  </script>
+</body>
+
+</html>
